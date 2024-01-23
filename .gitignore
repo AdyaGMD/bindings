@@ -1,9 +1,7 @@
 build/
 .vscode/
 __scripts
-
 **/.DS_Store
-scripts/*.so
-scripts/*.dll
-scripts/*.txt
-scripts/out/
+scripts/Bindings.json
+__optcall.xml
+__membercall.xml
