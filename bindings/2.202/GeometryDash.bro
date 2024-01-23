@@ -3732,7 +3732,7 @@ class GameLevelManager : cocos2d::CCNode {
 	TodoReturn getBasePostString() = win 0xfb1b0;
 	bool getBoolForKey(char const*) = win 0x111610;
 	TodoReturn getCommentKey(int, int, int, CommentKeyType);
-	TodoReturn getCompletedLevels(bool);
+	cocos2d::CCArray* getCompletedLevels(bool) = win 0xf7680;
 	TodoReturn getDailyID(GJTimedLevelType);
 	TodoReturn getDailyTimer(GJTimedLevelType);
 	TodoReturn getDeleteCommentKey(int, int, int);
@@ -10660,13 +10660,16 @@ class RateDemonLayer : FLAlertLayer, UploadPopupDelegate, UploadActionDelegate {
 
 	bool init(int);
 	void onClose(cocos2d::CCObject* sender);
-	void onRate(cocos2d::CCObject* sender);
-	TodoReturn selectRating(cocos2d::CCObject*);
+	void onRate(cocos2d::CCObject* sender) = win 0x2f0d30;
+	void selectRating(cocos2d::CCObject*) = win 0x2f0bd0;
 
 	virtual void keyBackClicked();
 	virtual TodoReturn uploadActionFinished(int, int);
 	virtual TodoReturn uploadActionFailed(int, int);
 	virtual TodoReturn onClosePopup(UploadActionPopup*);
+
+	PAD = win 0x12;
+	int m_demonRate;
 }
 
 [[link(android)]]
