@@ -11940,6 +11940,9 @@ class SelectSettingLayer : FLAlertLayer {
 	TodoReturn valueToIdx(SelectSettingType, int);
 
 	virtual void keyBackClicked();
+
+	PAD = win 0x4;
+	int m_settingID;
 }
 
 [[link(android)]]
